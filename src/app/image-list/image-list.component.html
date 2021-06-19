@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <label class="form-label">Search Images</label>
+  <div class="input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search Images"
+      [(ngModel)]="searchQuery"
+    />
+  </div>
+
+  <button
+    (click)="searchImages(searchQuery)"
+    type="button"
+    class="btn btn-primary"
+  >
+    Find Images
+  </button>
+
+  <div class="row">
+    <div class="col-md-4 mt-3" *ngFor="let item of images">
+      <div class="card">
+        <img src="{{ item.webformatURL }}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{ item.tags }}</h5>
+          <p class="card-text">Likes : {{ item.likes }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
